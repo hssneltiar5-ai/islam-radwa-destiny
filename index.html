@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>wedding invitation</title>
+<title>دعوة فرح إسلام & رضوى</title>
 <meta name="theme-color" content="#8c1238">
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cairo:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Noto+Naskh+Arabic:wght@400;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -12,7 +12,7 @@
 html,body{overflow-x:hidden}
 body{font-family:'Cairo',sans-serif;color:var(--ink);background:#fff}
 button{font-family:inherit;cursor:pointer;border:0}
-.btn{background:var(--w);color:#fff;padding:.6rem 1.7rem;border-radius:99px;font:600 .95rem 'Noto Naskh Arabic','Cairo',serif;box-shadow:0 8px 20px #8c123840;transition:.2s}
+.btn{background:var(--w);color:#fff;padding:.55rem 1.5rem;border-radius:8px;font:600 .95rem 'Noto Naskh Arabic','Cairo',serif;box-shadow:0 8px 20px #8c123840;transition:.2s}
 .btn:hover{transform:translateY(-2px)}
 .script{font-family:'Allura',cursive;color:var(--w);font-weight:400}
 .im{display:block;background:center/100% 100% no-repeat;pointer-events:none}
@@ -41,22 +41,32 @@ button{font-family:inherit;cursor:pointer;border:0}
 .card .orn:before,.card .orn:after{content:"";flex:1;height:1px;background:var(--w2)}
 .card #dtxt{font:1.1rem 'Playfair Display','Noto Naskh Arabic',serif;color:#7a3a50}
 .card .sub{font:1rem 'Noto Naskh Arabic',serif;color:#7a3a50;margin:1rem 0 1.3rem}
+.card .btn{border-radius:99px;padding:.6rem 2rem}
+.heart{position:relative}
+.bl{position:absolute;width:min(48vw,300px);opacity:0;pointer-events:none}
+.bl.b1{left:2%;top:-4%}.bl.b2{right:0;bottom:-6%;--f:-1}
+#intro.go .bl{animation:bloom 1.7s ease-out forwards}
+@keyframes bloom{0%{opacity:0;transform:scaleX(var(--f,1)) scale(.45) rotate(-10deg);filter:blur(10px)}30%{opacity:.62}100%{opacity:0;transform:scaleX(var(--f,1)) scale(1.55) rotate(4deg);filter:blur(16px)}}
+#intro.go .card{animation:cardOut 1.7s ease-in forwards}
+@keyframes cardOut{0%,40%{transform:none;opacity:1;filter:none}100%{transform:translateY(-46px) scale(.97);opacity:0;filter:blur(5px)}}
+#intro.go .heart:after{content:"";position:absolute;inset:-4px;border:3px solid #e48ba8;border-radius:50%;animation:ring 1s ease-out forwards}
+@keyframes ring{to{transform:scale(2.4);opacity:0}}
 /* page */
 #main{max-width:430px;margin:0 auto;position:relative;overflow:hidden;opacity:0;transition:opacity 1s}
 #main.show{opacity:1}
 .rv{opacity:0;transform:translateY(26px);transition:.9s}.rv.in{opacity:1;transform:none}
-.hero{position:relative;height:620px}
-.hero .hf{position:absolute;top:-8px;left:-6%;width:68%;aspect-ratio:520/777;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
-.ph{position:absolute;width:150px;height:200px;border:4px solid #6d1b3b;background:#ecd3dc;box-shadow:0 12px 26px #0003;overflow:hidden;display:grid;place-items:center}
+.hero{position:relative;height:650px}
+.hero .hf{position:absolute;top:-6px;left:-4%;width:50%;aspect-ratio:520/777;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+.ph{position:absolute;width:136px;height:182px;border:4px solid #6d1b3b;background:#ecd3dc;box-shadow:0 12px 26px #0003;overflow:hidden;display:grid;place-items:center}
 .ph img{width:100%;height:100%;object-fit:cover}
-.ph.a{top:120px;right:44px;transform:rotate(5deg)}
-.ph.b{top:215px;left:98px;transform:rotate(-8deg);z-index:2}
-.names{position:absolute;left:0;right:0;bottom:130px;height:110px;direction:ltr}
+.ph.a{top:140px;right:34px;transform:rotate(5deg)}
+.ph.b{top:236px;left:98px;transform:rotate(-8deg);z-index:2}
+.names{position:absolute;left:0;right:0;top:452px;height:110px;direction:ltr}
 .names span{position:absolute;font:italic 600 1.7rem 'Cormorant Garamond',serif;color:var(--w);letter-spacing:.02em}
 .names .r{left:26px;top:52px}.names .i{right:46px;top:6px}
 .names .g{position:absolute;left:50%;top:-16px;transform:translateX(-50%);font:7rem 'Allura';color:#f0e1e6}
 .rib5{position:absolute;left:-3%;bottom:-16px;width:106%;aspect-ratio:860/296;-webkit-mask-image:linear-gradient(transparent,#000 22%);mask-image:linear-gradient(transparent,#000 22%)}
-section.s{position:relative;padding:2rem 1.8rem}
+section.s{position:relative;padding:1.3rem 1.6rem}
 h2{font:700 1.3rem 'Noto Naskh Arabic',serif;color:var(--w);margin-bottom:1rem}
 .inv .v{font:1.2rem 'Noto Naskh Arabic',serif;color:var(--w);margin-bottom:.8rem}
 .inv .nm{font-size:3.2rem;line-height:1.05;display:block;direction:ltr;text-align:right}
@@ -65,14 +75,15 @@ h2{font:700 1.3rem 'Noto Naskh Arabic',serif;color:var(--w);margin-bottom:1rem}
 .dt{display:flex;align-items:center;gap:.8rem;margin-top:.6rem}
 .dt big{font:400 4.4rem/1 'Playfair Display',serif;color:var(--w)}
 .dt div{border-right:1px solid var(--w);padding-right:.8rem;font:1.15rem 'Playfair Display',serif;color:var(--w)}
-.det{width:112%;margin:-.5rem -6% 0;aspect-ratio:860/450}
+.inv{z-index:1;padding-bottom:.2rem}
+.det{position:relative;z-index:0;width:112%;margin:-128px -6% 0;aspect-ratio:860/450}
 /* gallery */
-.cf{position:relative;height:350px;perspective:900px;touch-action:pan-y;user-select:none}
+.cf{position:relative;height:335px;perspective:900px;touch-action:pan-y;user-select:none}
 .sl{position:absolute;top:0;left:50%;width:190px;height:310px;margin-left:-95px;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#efdce3,#d9aebd);display:grid;place-items:center;box-shadow:0 14px 30px #0003;transition:.6s cubic-bezier(.2,.8,.2,1)}
 .sl img{width:100%;height:100%;object-fit:cover}
 .cnt{text-align:center;font-size:.8rem;color:var(--w2)}
 /* countdown + calendar */
-.ev{position:relative;padding-top:2.6rem}
+.ev{position:relative;padding-top:1.8rem}
 .fl7{position:absolute;left:-6px;top:6px;width:25%;aspect-ratio:300/778;transform:scaleX(-1)}
 .ev .c{position:relative;z-index:1}
 .cd{display:flex;gap:.5rem;margin:.4rem 0 1.4rem;direction:ltr}
@@ -108,7 +119,13 @@ input:focus,textarea:focus{border-color:var(--w)}
 .stp button{width:28px;height:28px;border-radius:8px;background:#eee;font-size:1.1rem}
 #toast{opacity:0;position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--w);color:#fff;padding:.7rem 1.3rem;border-radius:99px;z-index:70;transition:.4s;font-size:.9rem}
 #toast.on{transform:translate(-50%,0);opacity:1}
-#mus{position:fixed;bottom:18px;right:18px;width:42px;height:42px;border-radius:50%;background:var(--w);color:#fff;z-index:40;display:none;box-shadow:0 6px 16px #8c123860}
+#mus{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b0183f,#7a0b32);z-index:40;display:none;place-items:center;box-shadow:0 6px 16px #8c123860}
+#mus .eq{display:flex;align-items:flex-end;gap:3px;height:16px}
+#mus .eq i{width:3px;background:#fff;border-radius:2px;height:6px}
+#mus .eq i:nth-child(2){height:10px}#mus .eq i:nth-child(3){height:15px}
+#mus.on .eq i{animation:eq .7s ease-in-out infinite alternate}
+#mus.on .eq i:nth-child(2){animation-delay:.2s}#mus.on .eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{to{height:3px}}
 </style>
 </head>
 <body>
@@ -122,8 +139,9 @@ input:focus,textarea:focus{border-color:var(--w)}
     <p class="sub">حضوركم يسعدنا</p>
     <button class="btn" id="open">فتح</button>
   </div>
+  <i class="im bl b1 a-hero"></i><i class="im bl b2 a-hero"></i>
 </div>
-<button id="mus" aria-label="موسيقى">♪</button>
+<button id="mus" aria-label="موسيقى"><span class="eq"><i></i><i></i><i></i></span></button>
 
 <main id="main">
   <section class="hero">
@@ -135,11 +153,11 @@ input:focus,textarea:focus{border-color:var(--w)}
 
   <section class="s inv"><div class="rv">
     <p class="v" id="venue1"></p>
-    <span class="nm script" id="m1"></span><p class="sm">العريس</p>
-    <p class="script" style="font-size:2.4rem">&amp;</p>
-    <span class="nm script" id="m2"></span><p class="sm">العروسة</p>
     <p class="tx">بقلوب مليانة فرحة بنتشرف بدعوتكم تشاركونا أحلى يوم في عمرنا، وتبقوا معانا في ليلة العمر إن شاء الله.</p>
-    <p style="font:600 1rem 'Noto Naskh Arabic',serif" id="when"></p>
+    <span class="nm script" id="m1"></span><p class="sm">العريس</p>
+    <p class="script" style="font-size:2.2rem;line-height:1.2">&amp;</p>
+    <span class="nm script" id="m2"></span><p class="sm">العروسة</p>
+    <p style="font:600 1rem 'Noto Naskh Arabic',serif;margin-top:.8rem" id="when"></p>
     <div class="dt"><big>14</big><div>ديسمبر<br>2026</div></div>
   </div></section>
   <i class="im det a-det"></i>
@@ -154,7 +172,7 @@ input:focus,textarea:focus{border-color:var(--w)}
     <h2 style="margin-top:1.4rem">فاضل على الفرحة</h2>
     <div class="cd"><div><b id="cdd">0</b><small>يوم</small></div><div><b id="cdh">0</b><small>ساعة</small></div><div><b id="cdm">0</b><small>دقيقة</small></div><div><b id="cds">0</b><small>ثانية</small></div></div>
     <div class="cal"><h3>December 2026</h3><div class="g" id="cal"></div></div>
-    <button class="lnk" id="ics">أضف للتقويم</button><br>
+    <button class="lnk" id="ics">أضف إلى التقويم</button><br>
     <button class="btn" onclick="openM()">تأكيد الحضور</button>
   </div></section>
 
@@ -167,7 +185,7 @@ input:focus,textarea:focus{border-color:var(--w)}
     <input id="gn" placeholder="اكتب اسمك *"><textarea id="gm" rows="3" placeholder="اكتب تهنئتك *"></textarea>
     <button class="btn" id="gs">ابعت التهنئة</button><div class="gb" id="gl"></div></div></section>
 
-  <section class="foot"><p>حضوركم هيكون أحلى هدية بنتلقاها في يومنا المميز ♥</p><i class="im f a-foot"></i></section>
+  <section class="foot"><p>حضوركم سيكون أعظم هدية نتلقاها في يومنا المميز!</p><i class="im f a-foot"></i></section>
 </main>
 
 <div class="modal" id="rm"><div class="box">
@@ -192,8 +210,8 @@ const C={
   venue:'نادي اتحاد الشرطة',
   mapQuery:'Police Union Club 374G+65R',
   whatsapp:'',   // مثال: 201001234567
-  music:'',      // رابط mp3 (اختياري)
-  photos:['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg']      // أول صورتين في أول الصفحة والباقي في المعرض. مثال: ['img/1.jpg','img/2.jpg','img/3.jpg']
+  music:'music.mp3',      // ملف الموسيقى (حطه جنب index.html باسم music.mp3)
+  photos:['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg']      // أول صورتين في أول الصفحة والباقي في المعرض
 };
 /* ================================= */
 const $=s=>document.querySelector(s),D=new Date(C.dateISO);
@@ -206,9 +224,28 @@ for(let i=0;i<16;i++){const p=document.createElement('span');p.className='petal'
 const HEART='<svg width="38" height="38" viewBox="0 0 24 24" fill="#b97f93"><path d="M12 21s-8-5.3-8-11a4.6 4.6 0 0 1 8-3 4.6 4.6 0 0 1 8 3c0 5.7-8 11-8 11z"/></svg>';
 const ph=s=>s?`<img src="${s}" alt="">`:HEART;
 $('#p1').innerHTML=ph(C.photos[0]);$('#p2').innerHTML=ph(C.photos[1]);
-let au;
-$('#open').onclick=()=>{$('#intro').classList.add('gone');$('#main').classList.add('show');scrollTo(0,0);if(au)au.play().catch(()=>{})};
-if(C.music){au=new Audio(C.music);au.loop=true;const m=$('#mus');m.style.display='block';m.onclick=()=>{au.paused?au.play():au.pause();m.style.opacity=au.paused?.5:1}}
+let au;const mus=$('#mus');
+if(C.music){au=new Audio(C.music);au.loop=true;au.volume=.7;au.onerror=()=>{mus.style.display='none';au=null};
+  mus.style.display='grid';mus.onclick=()=>{if(au)au.paused?au.play().catch(()=>{}):au.pause()};
+  ['play','pause'].forEach(ev=>au.addEventListener(ev,()=>mus.classList.toggle('on',!au.paused)))}
+function burst(){const b=$('#open').getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2;
+  for(let i=0;i<30;i++){const s=document.createElement('span');s.textContent='✿';
+    s.style.cssText=`position:fixed;left:${x}px;top:${y}px;z-index:60;color:#c9708f;font-size:${10+Math.random()*12}px;pointer-events:none`;
+    document.body.appendChild(s);const a=Math.random()*Math.PI*2,d=70+Math.random()*190;
+    s.animate([{transform:'translate(0,0) rotate(0) scale(.6)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d*.8+40}px) rotate(${Math.random()*360}deg) scale(1)`,opacity:0}],
+      {duration:1100+Math.random()*500,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>s.remove()}}
+/* نزول الصفحة براحة لوحدها (بيقف أول ما تلمس الشاشة) */
+let auto=false,lt=0,acc=0;
+function step(t){if(!auto)return;acc+=38*(t-lt)/1000;lt=t;const px=Math.floor(acc);
+  if(px){acc-=px;scrollBy(0,px)}
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-2){auto=false;return}
+  requestAnimationFrame(step)}
+function startAuto(){auto=true;lt=performance.now();requestAnimationFrame(step)}
+['wheel','touchstart','mousedown','keydown'].forEach(e=>addEventListener(e,()=>{auto=false},{passive:true}));
+$('#open').onclick=()=>{const it=$('#intro');$('#open').disabled=true;if(au)au.play().catch(()=>{});
+  it.classList.add('go');setTimeout(burst,950);
+  setTimeout(()=>{it.classList.add('gone');$('#main').classList.add('show');scrollTo(0,0)},1900);
+  setTimeout(startAuto,3600)};
 const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.12});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 /* gallery */
