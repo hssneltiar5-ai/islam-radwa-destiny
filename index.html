@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Islam-Radwa-destiny</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%238c1238' d='M12 21s-8-5.3-8-11a4.6 4.6 0 0 1 8-3 4.6 4.6 0 0 1 8 3c0 5.7-8 11-8 11z'/></svg>">
 <meta name="theme-color" content="#8c1238">
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cairo:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Noto+Naskh+Arabic:wght@400;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -126,6 +127,13 @@ input:focus,textarea:focus{border-color:var(--w)}
 #mus.on .eq i{animation:eq .7s ease-in-out infinite alternate}
 #mus.on .eq i:nth-child(2){animation-delay:.2s}#mus.on .eq i:nth-child(3){animation-delay:.4s}
 @keyframes eq{to{height:3px}}
+.hf{transform-origin:100% 60%;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-2.2deg) scale(1)}50%{transform:rotate(2.2deg) scale(1.025)}}
+.fl7{transform-origin:50% 95%;animation:sway7 7s ease-in-out infinite}
+@keyframes sway7{0%,100%{transform:scaleX(-1) rotate(-2deg)}50%{transform:scaleX(-1) rotate(2deg)}}
+.det{transform-origin:20% 40%;animation:flt 8s ease-in-out infinite}
+@keyframes flt{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(.6deg)}}
+@media (prefers-reduced-motion:reduce){.hf,.fl7,.det{animation:none}}
 </style>
 </head>
 <body>
@@ -251,10 +259,12 @@ document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 /* gallery */
 const gp=C.photos.slice(2),N=Math.max(gp.length,5);let cur=0;const cf=$('#cf');
 for(let i=0;i<N;i++){const s=document.createElement('div');s.className='sl';s.innerHTML=ph(gp[i]);cf.appendChild(s)}
-function lay(){[...cf.children].forEach((s,i)=>{const o=i-cur,a=Math.abs(o);s.style.transform=`translateX(${o*58}%) translateZ(${-a*90}px) rotateY(${-o*32}deg)`;s.style.zIndex=10-a;s.style.opacity=a>3?0:1-a*.18});$('#cnt').textContent=`${cur+1} / ${N}`}
+function lay(){[...cf.children].forEach((s,i)=>{let o=i-cur;if(o>N/2)o-=N;if(o<-N/2)o+=N;const a=Math.abs(o),jump=s._o!==undefined&&Math.abs(o-s._o)>1;s._o=o;s.style.transition=jump?'none':'';s.style.transform=`translateX(${o*58}%) translateZ(${-a*90}px) rotateY(${-o*32}deg)`;s.style.zIndex=10-a;s.style.opacity=a>3?0:1-a*.18});$('#cnt').style.direction='ltr';$('#cnt').textContent=`${cur+1} / ${N}`}
 lay();let sx=null;
 cf.onpointerdown=e=>sx=e.clientX;
-cf.onpointerup=e=>{if(sx===null)return;const d=e.clientX-sx;if(Math.abs(d)>30){cur=Math.max(0,Math.min(N-1,cur+(d<0?1:-1)));lay()}sx=null};
+cf.onpointerup=e=>{if(sx===null)return;const d=e.clientX-sx;if(Math.abs(d)>30){cur=(cur+(d<0?1:-1)+N)%N;lay()}sx=null};
+let pauseT=0;['pointerdown','click'].forEach(ev=>cf.addEventListener(ev,()=>pauseT=Date.now()));
+setInterval(()=>{if(Date.now()-pauseT>4000){cur=(cur+1)%N;lay()}},3000);
 cf.onclick=e=>{const i=[...cf.children].indexOf(e.target.closest('.sl'));if(i>-1){cur=i;lay()}};
 /* countdown */
 function tick(){const s=Math.max(0,(D-Date.now())/1000|0);$('#cdd').textContent=s/86400|0;$('#cdh').textContent=s%86400/3600|0;$('#cdm').textContent=s%3600/60|0;$('#cds').textContent=s%60}
